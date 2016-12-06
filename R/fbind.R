@@ -12,5 +12,6 @@
 #' @examples
 #' #' fbind(iris$Species[c(1, 51, 101)], PlantGrowth$group[c(1, 11, 21)])
 fbind <- function(a,b) {
+	stopifnot(!is.null(a), !is.null(b))
 	factor(c(as.character(a), as.character(b)))
 }

@@ -1,0 +1,50 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "README-"
+)
+```
+
+A package to deal with the weird parts of factors. The implementation and documentation of `fbind()` and `freq_out` are purely based on Jennifer Bryan's `foofactors` package.
+
+Loading the package and providing a preview of the data used:
+
+```{r}
+library(foofactors)
+str(iris)
+str(PlantGrowth)
+```
+
+
+
+Binding two factors via `fbind()`:
+
+```{r}
+fbind(iris$Species[c(1, 51, 101)], PlantGrowth$group[c(1, 11, 21)])
+```
+
+Obtaining a table of frequencies for the levels of a factor via `freq_out`:
+
+```{r}
+freq_out(iris$Species)
+```
+
+Detecting factors that should be characters via `is_char_factor`:
+
+```{r}
+is_char_factor(iris$Species)
+```
+
+Reordering levels of factor in descending order via `desc_reord`:
+
+```{r}
+levels(iris$Species)
+levels(desc_reord(iris$Species))
+```

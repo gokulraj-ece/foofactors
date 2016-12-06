@@ -1,9 +1,11 @@
 Package: foofactors
-Title: What the Package Does (one line, title case)
+Title: Making factors manageable
 Version: 0.0.0.9000
-Authors@R: person("First", "Last", email = "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
-Depends: R (>= 3.3.1)
-License: What license is it under?
+Authors@R: person("Gokul Raj", "Suresh Kumar", email = "gokulraj@ece.ubc.ca", role = c("aut", "cre"))
+Description: Factors can be quite a pain to deal with, and this is a desperate attempt to make it hurt less.
+Depends:
+    R (>= 3.2.2)
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
+RoxygenNote: 5.0.1

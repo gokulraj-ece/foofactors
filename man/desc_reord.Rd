@@ -13,7 +13,8 @@ desc_reord(x)
 factor
 }
 \description{
-Reorder levels of argument in descending order
+My version of reorder that uses dplyr::desc() to reorder
+factor levels in descending order
 }
 \examples{
 #' desc_reord(iris$Species)

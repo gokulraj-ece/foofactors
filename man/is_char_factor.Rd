@@ -13,7 +13,8 @@ is_char_factor(x)
 logical
 }
 \description{
-Detects factors that should be characters
+Detects factors that should be character, because
+# unique values = length
 }
 \examples{
 #' is_char_factor(iris$Species)

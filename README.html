@@ -26,8 +26,11 @@ body {
 <body>
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+<h2 id="foofactors">Foofactors</h2>
 <p>A package to deal with the weird parts of factors. The implementation and documentation of <code>fbind()</code> and <code>freq_out</code> are purely based on Jennifer Bryan's <code>foofactors</code> package.</p>
-<p>Loading the package and providing a preview of the data used:</p>
+<h4 id="installation">Installation</h4>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">devtools::<span class="kw">install_github</span>(<span class="st">&quot;gokulraj-ece/foofactors&quot;</span>)</code></pre></div>
+<h4 id="loading-the-package-and-providing-a-preview-of-the-data-used">Loading the package and providing a preview of the data used:</h4>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(foofactors)
 <span class="kw">str</span>(iris)
 <span class="co">#&gt; 'data.frame':    150 obs. of  5 variables:</span>
@@ -40,11 +43,11 @@ body {
 <span class="co">#&gt; 'data.frame':    30 obs. of  2 variables:</span>
 <span class="co">#&gt;  $ weight: num  4.17 5.58 5.18 6.11 4.5 4.61 5.17 4.53 5.33 5.14 ...</span>
 <span class="co">#&gt;  $ group : Factor w/ 3 levels &quot;ctrl&quot;,&quot;trt1&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...</span></code></pre></div>
-<p>Binding two factors via <code>fbind()</code>:</p>
+<h4 id="binding-two-factors-via-fbind">Binding two factors via <code>fbind()</code>:</h4>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">fbind</span>(iris$Species[<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">51</span>, <span class="dv">101</span>)], PlantGrowth$group[<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">11</span>, <span class="dv">21</span>)])
 <span class="co">#&gt; [1] setosa     versicolor virginica  ctrl       trt1       trt2      </span>
 <span class="co">#&gt; Levels: ctrl setosa trt1 trt2 versicolor virginica</span></code></pre></div>
-<p>Obtaining a table of frequencies for the levels of a factor via <code>freq_out</code>:</p>
+<h5 id="obtaining-a-table-of-frequencies-for-the-levels-of-a-factor-via-freq_out">Obtaining a table of frequencies for the levels of a factor via <code>freq_out</code>:</h5>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">freq_out</span>(iris$Species)
 <span class="co">#&gt; # A tibble: 3 × 2</span>
 <span class="co">#&gt;            x     n</span>
@@ -52,10 +55,10 @@ body {
 <span class="co">#&gt; 1     setosa    50</span>
 <span class="co">#&gt; 2 versicolor    50</span>
 <span class="co">#&gt; 3  virginica    50</span></code></pre></div>
-<p>Detecting factors that should be characters via <code>is_char_factor</code>:</p>
+<h4 id="detecting-factors-that-should-be-characters-via-is_char_factor">Detecting factors that should be characters via <code>is_char_factor</code>:</h4>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">is_char_factor</span>(iris$Species)
 <span class="co">#&gt; [1] FALSE</span></code></pre></div>
-<p>Reordering levels of factor in descending order via <code>desc_reord</code>:</p>
+<h4 id="reordering-levels-of-factor-in-descending-order-via-desc_reord">Reordering levels of factor in descending order via <code>desc_reord</code>:</h4>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">levels</span>(iris$Species)
 <span class="co">#&gt; [1] &quot;setosa&quot;     &quot;versicolor&quot; &quot;virginica&quot;</span>
 <span class="kw">levels</span>(<span class="kw">desc_reord</span>(iris$Species))

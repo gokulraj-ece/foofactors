@@ -1,8 +1,17 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+Foofactors
+----------
+
 A package to deal with the weird parts of factors. The implementation and documentation of `fbind()` and `freq_out` are purely based on Jennifer Bryan's `foofactors` package.
 
-Loading the package and providing a preview of the data used:
+#### Installation
+
+``` r
+devtools::install_github("gokulraj-ece/foofactors")
+```
+
+#### Loading the package and providing a preview of the data used:
 
 ``` r
 library(foofactors)
@@ -19,7 +28,7 @@ str(PlantGrowth)
 #>  $ group : Factor w/ 3 levels "ctrl","trt1",..: 1 1 1 1 1 1 1 1 1 1 ...
 ```
 
-Binding two factors via `fbind()`:
+#### Binding two factors via `fbind()`:
 
 ``` r
 fbind(iris$Species[c(1, 51, 101)], PlantGrowth$group[c(1, 11, 21)])
@@ -27,7 +36,7 @@ fbind(iris$Species[c(1, 51, 101)], PlantGrowth$group[c(1, 11, 21)])
 #> Levels: ctrl setosa trt1 trt2 versicolor virginica
 ```
 
-Obtaining a table of frequencies for the levels of a factor via `freq_out`:
+##### Obtaining a table of frequencies for the levels of a factor via `freq_out`:
 
 ``` r
 freq_out(iris$Species)
@@ -39,14 +48,14 @@ freq_out(iris$Species)
 #> 3  virginica    50
 ```
 
-Detecting factors that should be characters via `is_char_factor`:
+#### Detecting factors that should be characters via `is_char_factor`:
 
 ``` r
 is_char_factor(iris$Species)
 #> [1] FALSE
 ```
 
-Reordering levels of factor in descending order via `desc_reord`:
+#### Reordering levels of factor in descending order via `desc_reord`:
 
 ``` r
 levels(iris$Species)
